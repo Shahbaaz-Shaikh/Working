@@ -1,7 +1,6 @@
 package com.utility.base;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -15,12 +14,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class BaseUtility {
 
 public static String ProjectPath=System.getProperty("user.dir");
-public static WebDriver driver;
+	/* public static WebDriver driver; */
 public static Properties prop;
 
 	
-	public static void openBrowser(String browsername,String url)
+	public static WebDriver openBrowser(String browsername,String url)
 	{
+		WebDriver driver=null;
 		if(browsername.equalsIgnoreCase("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", ProjectPath+"/src/test/java/com/project/config/chromedriver.exe");
@@ -44,9 +44,10 @@ public static Properties prop;
 		driver.get(url);		
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
+		return driver;
 	}
 	
-	public String readConfigValue(String configName) throws IOException 
+	public static String readConfigValue(String configName) throws IOException 
 	{
 		FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/config.properties");
 		prop=new Properties();
