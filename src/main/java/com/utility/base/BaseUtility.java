@@ -5,11 +5,15 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.text.Element;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseUtility {
 
@@ -49,13 +53,38 @@ public static Properties prop;
 	
 	public static String readConfigValue(String configName) throws IOException 
 	{
-		FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/config.properties");
-		prop=new Properties();
-		prop.load(fis);
+		try {
+			FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/config.properties");
+			prop=new Properties();
+			prop.load(fis);
+		 }
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Unabcle to read properties file "+e.getMessage());
+		}
+			
 		String configValue=prop.getProperty(configName);
 		return configValue;
 	}
 	
-	
+	public static void selectRadiobutton(WebElement element,WebDriver driver) {
+		
+		try {
+			if(element.isDisplayed())
+			{
+				element.click();
+				
+			}
+			else
+			{
+				WebDriverWait wait=new WebDriverWait(driver, 20);
+				
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 
 }
