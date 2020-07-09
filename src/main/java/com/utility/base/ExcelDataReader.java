@@ -104,6 +104,26 @@ public class ExcelDataReader {
 		
 		return list;
 	}
+	
+	public String getStringCellData(String sheetName,int rowNum,int colNum)
+	{
+	 return wb.getSheet(sheetName).getRow(rowNum).getCell(colNum).getStringCellValue();
+	}
+	
+	public double getNumericCellData(String sheetName,int rowNum,int colNum)
+	{
+	 return wb.getSheet(sheetName).getRow(rowNum).getCell(colNum).getNumericCellValue();
+	}
+	
+	public String getStringCellData(int sheetIndex,int rowNum,int colNum)
+	{
+	 return wb.getSheetAt(sheetIndex).getRow(rowNum).getCell(colNum).getStringCellValue();
+	}
+	
+	public double getNumericCellData(int sheetIndex,int rowNum,int colNum)
+	{
+	 return wb.getSheetAt(sheetIndex).getRow(rowNum).getCell(colNum).getNumericCellValue();
+	}
 }
 	
 	

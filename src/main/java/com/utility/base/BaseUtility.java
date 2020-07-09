@@ -27,12 +27,12 @@ public static Properties prop;
 		WebDriver driver=null;
 		if(browsername.equalsIgnoreCase("chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", ProjectPath+"/src/test/java/com/project/config/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver=new ChromeDriver();
 		}
 		else if(browsername.equalsIgnoreCase("FF")||browsername.equalsIgnoreCase("Firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", ProjectPath+"/src/test/java/com/project/config/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
 			driver=new FirefoxDriver();
 		}
 		else if(browsername.equalsIgnoreCase("IE")||browsername.equalsIgnoreCase("InternetExplorer"))
@@ -40,7 +40,7 @@ public static Properties prop;
 			DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
 			caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
 			caps.setCapability("ignoreZoomSetting", true);
-			System.setProperty("webdriver.ie.driver", ProjectPath+"/src/test/java/com/project/config/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "./Drivers/IEDriverServer.exe");
 			driver=new InternetExplorerDriver(caps);
 		}
 		
@@ -51,21 +51,6 @@ public static Properties prop;
 		return driver;
 	}
 	
-	public static String readConfigValue(String configName) throws IOException 
-	{
-		try {
-			FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/config.properties");
-			prop=new Properties();
-			prop.load(fis);
-		 }
-		catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Unabcle to read properties file "+e.getMessage());
-		}
-			
-		String configValue=prop.getProperty(configName);
-		return configValue;
-	}
 	
 	public static void selectRadiobutton(WebElement element,WebDriver driver) {
 		
