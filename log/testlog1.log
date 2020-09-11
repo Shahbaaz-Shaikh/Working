@@ -1,0 +1,8 @@
+2020-08-25 12:26:45,641 [main] INFO PreCondition - Url Launched on Browser
+2020-08-25 12:26:45,868 [main] INFO PreCondition - Entered username
+2020-08-25 12:26:45,941 [main] INFO PreCondition - Entered password
+2020-08-25 12:26:47,849 [main] INFO PreCondition - Clicked submit button
+2020-08-25 14:32:03,574 [main] INFO PreCondition - Url Launched on Browser
+2020-08-25 14:32:03,677 [main] INFO PreCondition - Entered username
+2020-08-25 14:32:03,757 [main] INFO PreCondition - Entered password
+2020-08-25 14:32:05,448 [main] ERROR PreCondition - Error

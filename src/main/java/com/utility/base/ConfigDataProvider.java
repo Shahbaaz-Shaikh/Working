@@ -7,7 +7,7 @@ public class ConfigDataProvider {
 	
 	Properties prop;
 	
-	public  ConfigDataProvider() {
+	public  ConfigDataProvider() {		
 		// TODO Auto-generated constructor stub
 		
 		try {
@@ -17,7 +17,7 @@ public class ConfigDataProvider {
 		 }
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Unable to read properties file "+e.getMessage());
+			System.out.println("Exception is: "+e.getMessage());
 		}
 	}
 

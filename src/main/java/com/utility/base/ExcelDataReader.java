@@ -17,7 +17,7 @@ public class ExcelDataReader {
 	
 	public ExcelDataReader() {
 			try {	
-				FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/Testdata.xlsx");
+				FileInputStream fis=new FileInputStream(ProjectPath+"/Testdata/Testdata.xlsx");
 				wb=new XSSFWorkbook(fis);
 			}
 			catch (Exception e) {
@@ -28,7 +28,7 @@ public class ExcelDataReader {
 	
 	public ExcelDataReader(String sheetName) {
 		try {	
-			FileInputStream fis=new FileInputStream(ProjectPath+"/src/test/java/com/project/config/"+sheetName);
+			FileInputStream fis=new FileInputStream(ProjectPath+"/Testdata/"+sheetName);
 			wb=new XSSFWorkbook(fis);
 			
 		}

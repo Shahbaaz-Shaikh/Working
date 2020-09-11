@@ -1,12 +1,8 @@
 package com.utility.base;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import javax.swing.text.Element;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,10 +11,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class BaseUtility {
 
 public static String ProjectPath=System.getProperty("user.dir");
-	/* public static WebDriver driver; */
+	
 public static Properties prop;
 
 	
@@ -71,5 +68,20 @@ public static Properties prop;
 		}
 		
 	}
+	
+	
+	public static String extractDigits(String strValue)
+	{
+	    String str=strValue.trim();
+	    String extNum="";
+	    for(int i=0;i<str.length();i++)
+	    {
+	    	char ch=str.charAt(i);
+	    	if(Character.isDigit(ch))
+	    		extNum=extNum+ch;
+	    }
+		return extNum;
+	}
+	
 
 }

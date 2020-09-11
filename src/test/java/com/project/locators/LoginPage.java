@@ -7,19 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage  {
 
-WebDriver driver;
+WebDriver ldriver;
 		
-	public LoginPage(WebDriver driver) 
+	public LoginPage(WebDriver gdriver) 
 	  {
 		// TODO Auto-generated constructor stub
-		 this.driver=driver;
-		 PageFactory.initElements(driver, this);
-		 System.out.println("Inside Login page "+driver);
+		 ldriver=gdriver;
+		 PageFactory.initElements(gdriver, this);
+		 System.out.println("Inside Login page "+ldriver);
 	  }
 
 	@FindBy(xpath = "//*[text()='Login']") public WebElement loginButton;
-	@FindBy(xpath = "//input[@type='email']") public  WebElement emailInputFied;
-	@FindBy(xpath = "//input[@type='password']") public  WebElement pwdInputFied;
+	@FindBy(xpath = "//input[@type='email']") public WebElement emailInputFied;
+	@FindBy(xpath = "//input[@type='password']") public WebElement pwdInputFied;
 	
 	public void login()
 	{
