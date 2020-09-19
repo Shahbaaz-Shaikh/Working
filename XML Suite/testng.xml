@@ -4,7 +4,8 @@
   <test thread-count="5" name="Test">
    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.project.testcases.TC_001_Search_and_add_Item_to_the_cart"/>
+     <!-- <class name="com.project.testcases.TC_001_Search_and_add_Item_to_the_cart"/> -->
+      <class name="com.project.testcases.TC_002_Verify_user_can_remove_items_from_cart"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -16,7 +16,7 @@ public class ItemsListHomepage {
 
 	@FindBy(className = "search-keyword") public WebElement searchBox;
 	@FindBy(className = "searrch-button") public WebElement searchBtn;
-	
+	@FindBy(xpath = "//strong[text()='GreenKart']") public WebElement copyright;
 	
 	public void setSearchText(String itemname)
 	{
