@@ -53,7 +53,6 @@ public class TC_002_Verify_user_can_remove_items_from_cart extends Prerequisite{
        driver.switchTo().frame("frame1");
        Boolean value=driver.findElement(By.id("sampleHeading")).isDisplayed();
        System.out.println(value);
-       driver.quit();
 
 	  }
 	  

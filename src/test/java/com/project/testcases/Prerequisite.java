@@ -61,7 +61,7 @@ public class Prerequisite {
 	public void cleanup()
 	{
 		 extent.reportFlush();
-		 driver.close();
+		 driver.quit();
 	}
 	
 	

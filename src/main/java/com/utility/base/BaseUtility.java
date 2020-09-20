@@ -19,6 +19,7 @@ public static String ProjectPath=System.getProperty("user.dir");
 public static Properties prop;
 
 	
+	@SuppressWarnings("deprecation")
 	public static WebDriver openBrowser(String browsername,String url)
 	{
 		WebDriver driver=null;
@@ -59,7 +60,7 @@ public static Properties prop;
 			}
 			else
 			{
-				WebDriverWait wait=new WebDriverWait(driver, 20);
+				//WebDriverWait wait=new WebDriverWait(driver, 20);
 				
 			}
 			
